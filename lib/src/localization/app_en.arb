@@ -1,0 +1,6 @@
+{
+  "appTitle": "flutter_design_jam",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

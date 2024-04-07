@@ -1,50 +1,16 @@
-import 'package:equatable/equatable.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class Todo extends Equatable {
-  final int userId;
-  final int id;
-  final String title;
-  final bool completed;
+part 'todo_model.freezed.dart';
+part 'todo_model.g.dart';
 
-  const Todo({
-    required this.userId,
-    required this.id,
-    required this.title,
-    required this.completed,
-  });
+@freezed
+class Todo with _$Todo {
+  const factory Todo({
+    required int userId,
+    required int id,
+    required String title,
+    required bool completed,
+  }) = _Todo;
 
-  factory Todo.fromJson(Map<String, dynamic> json) {
-    return Todo(
-      userId: json['userId'],
-      id: json['id'],
-      title: json['title'],
-      completed: json['completed'],
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'userId': userId,
-      'id': id,
-      'title': title,
-      'completed': completed,
-    };
-  }
-
-  Todo copyWith({
-    int? userId,
-    int? id,
-    String? title,
-    bool? completed,
-  }) {
-    return Todo(
-      userId: userId ?? this.userId,
-      id: id ?? this.id,
-      title: title ?? this.title,
-      completed: completed ?? this.completed,
-    );
-  }
-
-  @override
-  List<Object> get props => [userId, id, title, completed];
+  factory Todo.fromJson(Map<String, Object?> json) => _$TodoFromJson(json);
 }

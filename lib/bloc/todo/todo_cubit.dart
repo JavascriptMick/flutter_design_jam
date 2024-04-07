@@ -5,7 +5,7 @@ import 'package:hydrated_bloc/hydrated_bloc.dart';
 class TodoCubit extends HydratedCubit<List<Todo>> {
   TodoCubit() : super([]);
 
-  void loadTodos() => {RestAPIService.getTodos().then((todos) => emit(todos))};
+  void loadTodos() => {TodoAPIService.getTodos().then((todos) => emit(todos))};
   void addTodo(Todo todo) => emit([...state, todo]);
   void removeTodo(int id) =>
       emit(state.where((todo) => todo.id != id).toList());

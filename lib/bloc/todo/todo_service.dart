@@ -4,7 +4,7 @@ import 'package:flutter_design_jam/bloc/todo/todo_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
 
-class RestAPIService {
+class TodoAPIService {
   static const _baseUrl = 'https://jsonplaceholder.typicode.com';
   static final DateFormat formatter = DateFormat('yyyy-MM-dd');
 

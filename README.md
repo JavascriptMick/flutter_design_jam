@@ -1,6 +1,6 @@
 # Flutter Design Jam
 
-A Naive First try at Flutter Architecture
+A Naive First try at Flutter Architecture with bloc
 
 ## I am very Opinionated
 
